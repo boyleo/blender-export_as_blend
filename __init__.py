@@ -20,6 +20,8 @@ bl_info = {
 	"category": "Import-Export"
 }
 
+# TODO : Test writing to blend file with https://docs.blender.org/api/current/bpy.types.BlendDataLibraries.html#bpy.types.BlendDataLibraries.write
+
 target_scene_items = []
 target_scene_default_item = '("ACTIVE_SCENE", "Active Scene", "")'
 
