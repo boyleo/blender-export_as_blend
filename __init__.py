@@ -219,7 +219,7 @@ class TILA_OP_ExportAsBlend(bpy.types.Operator, bpy_extras.io_utils.ExportHelper
 		file_override = ', overriding the file' if self.file_override == 'OVERRIDE' else ''
 		export_mode = 'appended' if self.export_mode ==  'APPEND' else 'linked'
 		if self.file_override == 'OVERRIDE':
-			export_to_clean_file = ' Data will be exported to a clean file.' if self.export_to_clean_file else ' Data will be exported to your startup file.'
+			export_to_clean_file = ' Data will be exported to a clean file.' if self.export_to_clean_file else ' Data will be exported using your startup file.'
 			
 		else:
 			export_to_clean_file = ''
