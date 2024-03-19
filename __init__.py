@@ -330,7 +330,6 @@ class TILA_OP_ExportAsBlend(bpy.types.Operator, bpy_extras.io_utils.ExportHelper
 		if self.file_override == 'OVERRIDE':
 			subprocess.check_call([bpy.app.binary_path,
 						'--background',
-						'--factory-startup',
 						'--python', path.join(path.dirname(path.realpath(__file__)), 'import_command.py'), '--'] + import_parameters)
 		elif self.file_override == 'APPEND_LINK':
 			subprocess.check_call([bpy.app.binary_path,
