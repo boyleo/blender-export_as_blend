@@ -13,8 +13,8 @@ bl_info = {
     "name": "Export as Blend",
     "author": "Tilapiatsu",
     "description": "This addon allow you to export data to a new blend file or append to an existing blend file, from selected Objects or a comlplete Scene.",
-    "version": (2, 0, 1),
-    "blender": (3, 1, 0),
+    "version": (2, 1, 0),
+    "blender": (4, 2, 0),
     "location": "File > Export > Export as Blend (.blend)",
     "warning": "",
     "category": "Import-Export",
@@ -87,7 +87,7 @@ class TILA_OP_ExportAsBlendSaveCurrentFile(bpy.types.Operator):
         return {"FINISHED"}
 
     def invoke(self, context, event):
-        return context.window_manager.invoke_confirm(self, event)
+        return context.window_manager.invoke_confirm(self, event, message="Save current blend file?")
 
 
 class TILA_OP_ExportAsBlend(bpy.types.Operator, bpy_extras.io_utils.ExportHelper):
