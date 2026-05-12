@@ -599,13 +599,12 @@ class ImportCommand:
             if d in ["screens", "workspaces"]:
                 continue
             p = getattr(bpy.data, d)
-            if isinstance(p, bpy.types.bpy_prop_collection):
-                if "remove" in dir(p):
-                    for e in p:
-                        if d == "scenes":
-                            if e.name == bpy.context.scene.name:
-                                continue
-                        p.remove(e)
+            if hasattr(p, 'remove'):
+                for e in p:
+                    if d == "scenes":
+                        if e.name == bpy.context.scene.name:
+                            continue
+                    p.remove(e)
 
     def link_objects(self, blend_file, object_names, collection, is_link):
         self.log.info(f"Linking objects from source file {blend_file} to Collection {collection}")
